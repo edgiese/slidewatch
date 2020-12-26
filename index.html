@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cruise Control</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function doPoll(){
+            $.get('poll_state', function(data) {
+                alert(JSON.stringify(data));  // process results here
+                setTimeout(doPoll,5000);
+            });
+        }
+    </script>
+</head>
+<body>
+<h1>Distant Reading Archive</h1><p>This site is a prototype API for distant reading of science fiction novels.</p>
+<script>doPoll();</script>
+</body>
+</html>

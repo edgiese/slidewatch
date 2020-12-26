@@ -1,0 +1,200 @@
+{
+  "defines": {
+    "mixer_channels": [
+      {"channel": 0, "name": "unused"},
+      {"channel": 1, "name": "aux"},
+      {"channel": 2, "name": "lectern"},
+      {"channel": 3, "name": "piano"},
+      {"channel": 4, "name": "kbd"},
+      {"channel": 5, "name": "cong"},
+      {"channel": 6, "name": "stream L"},
+      {"channel": 7, "name": "stream R"},
+      {"channel": 8, "name": "media L"},
+      {"channel": 9, "name": "media R"},
+      {"channel": 10, "name": "Pr Ely"},
+      {"channel": 11, "name": "Pr Ed"}
+    ],
+    "cameras": [
+      {
+        "name": "Rear",
+        "number": 2,
+        "presets": [
+          {"number": 1, "name": "Front of Church"},
+          {"number": 2, "name": "Chancel"},
+          {"number": 3, "name": "Advent Wreath"},
+          {"number": 4, "name": "Lector"},
+          {"number": 5, "name": "Preaching"}
+        ]
+      },
+      {
+        "name": "Side",
+        "number": 1,
+        "presets": [
+          {"number": 1, "name": "Chancel"}
+        ]
+      },
+      {
+        "name": "Front",
+        "number": 0,
+        "presets": []
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Full Back",
+        "cameras": ["Rear"]
+      },
+      {
+        "name": "Full Front",
+        "cameras": []
+      },
+      {
+        "name": "Full Side",
+        "cameras": ["Side"]
+      },
+      {
+        "name": "Full Media",
+        "cameras": []
+      },
+      {
+        "name": "Media Back",
+        "cameras": ["Rear"]
+      },
+      {
+        "name": "Media Front",
+        "cameras": []
+      },
+      {
+        "name": "Media Side",
+        "cameras": ["Side"]
+      }
+    ],
+    "states": [
+      {
+        "name": "Default",
+        "scene": "Full Rear",
+        "presets": [{"camera": "Rear", "preset": "Front of Church"}, {"camera": "Side", "preset": "Chancel"}],
+        "mics": ["unused","aux","lectern","piano","kbd","cong","stream L","stream R","media L","media R","Pr Ely","Pr Ed"]
+      },
+      {
+        "name": "Pre-Service",
+        "scene": "Media Front",
+        "presets": [],
+        "mics": ["kbd","cong","stream L","stream R","media L","media R"]
+      },
+      {
+        "name": "Announcements by Ely",
+        "scene": "Full Rear",
+        "presets": [{"camera": "Rear", "preset": "Front of Church"}],
+        "mics": ["Pr Ely"]
+      },
+      {
+        "name": "Responsive Reading Ely",
+        "scene": "Media Side",
+        "presets": [{"camera": "Side", "preset": "Chancel"}],
+        "mics": ["Pr Ely", "cong"]
+      },
+      {
+        "name": "Piano Hymn",
+        "scene": "Media Front",
+        "presets": [],
+        "mics": ["kbd","cong","media L","media R"]
+      },
+      {
+        "name": "Advent Wreath Ely",
+        "scene": "Media Rear",
+        "presets": [{"camera": "Rear", "preset": "Advent Wreath"}],
+        "mics": ["kbd","cong","Pr Ely"]
+      },
+      {
+        "name": "Advent Piano Hymn",
+        "scene": "Media Rear",
+        "presets": [{"camera": "Rear", "preset": "Advent Wreath"}],
+        "mics": ["kbd","cong"]
+      },
+      {
+        "name": "Lector",
+        "scene": "Media Front",
+        "presets": [{"camera": "Rear", "preset": "Lector"}],
+        "mics": ["lectern"]
+      },
+      {
+        "name": "Lector Responsive",
+        "scene": "Media Front",
+        "presets": [{"camera": "Rear", "preset": "Lector"}],
+        "mics": ["lectern","cong"]
+      },
+      {
+        "name": "Ely Guitar",
+        "scene": "Media Side",
+        "presets": [{"camera": "Side", "preset": "Chancel"}],
+        "mics": ["aux","cong","Pr Ely"]
+      },
+      {
+        "name": "Gospel Announcement Ely",
+        "scene": "Media Rear",
+        "presets": [{"camera": "Rear", "preset": "Lector"}],
+        "mics": ["cong","Pr Ely"]
+      },
+      {
+        "name": "Gospel Ely",
+        "scene": "Media Rear",
+        "presets": [{"camera": "Rear", "preset": "Lector"}],
+        "mics": ["Pr Ely"]
+      },
+      {
+        "name": "Zoom",
+        "scene": "Full Front",
+        "presets": [],
+        "mics": ["cong","stream L","stream R","Pr Ely"]
+      },
+      {
+        "name": "Altar Prayers",
+        "scene": "Full Rear",
+        "presets": [{"camera": "Rear", "preset": "Altar"}],
+        "mics": ["Pr Ely"]
+      },
+      {
+        "name": "Altar Prayers & Cong",
+        "scene": "Media Rear",
+        "presets": [{"camera": "Rear", "preset": "Altar"}],
+        "mics": ["cong","Pr Ely"]
+      },
+      {
+        "name": "Preaching Ely",
+        "scene": "Full Rear",
+        "presets": [{"camera": "Rear", "preset": "Preaching"}],
+        "mics": ["Pr Ely"]
+      }
+    ]
+  },
+  "slides": [
+    { "slides": [1, 2],     "description": "Sunday Title & Description",     "state": "Pre-Service" },
+    { "slides": [3],        "description": "Announcements",                  "state": "Announcements by Ely" },
+    { "slides": [4,5,6],    "description": "Opening Versicles & Invocation", "state": "Responsive Reading Ely" },
+    { "slides": [7,8,9],    "description": "Opening Hymn",                   "state": "Piano Hymn" },
+    { "slides": [10,11],    "description": "Confession & Absolution",        "state": "Responsive Reading Ely" },
+    { "slides": [12],       "description": "Candle Versicles",               "state": "Advent Wreath Ely" },
+    { "slides": [13,14],    "description": "Candle Hymn",                    "state": "Advent Piano Hymn" },
+    { "slides": [15],       "description": "Prayer of the Day",              "state": "Responsive Reading Ely" },
+    { "slides": [16,17,18], "description": "First Lesson",                   "state": "Lector" },
+    { "slides": [19],       "description": "First Lesson & Response",        "state": "Lector Responsive" },
+    { "slides": [20],       "description": "Second Lesson",                  "state": "Lector" },
+    { "slides": [21],       "description": "Second Lesson & Response",       "state": "Lector Responsive" },
+    { "slides": [22,23,24,25],"description": "Gospel Hymn",                  "state": "Ely Guitar" },
+    { "slides": [26],       "description": "Gospel Announcement",            "state": "Gospel Announcement Ely" },
+    { "slides": [27, 28],   "description": "Gospel",                         "state": "Gospel Ely" },
+    { "slides": [29],       "description": "Gospel & Response",              "state": "Gospel Announcement Ely" },
+    { "slides": [30],       "description": "Children's Message (ZOOM)",      "state": "Zoom" },
+    { "slides": [31,32],    "description": "Apostles' Creed",                "state": "Responsive Reading Ely" },
+    { "slides": [33,34,35], "description": "Offering",                       "state": "Piano Hymn" },
+    { "slides": [36],       "description": "Prayer of the Church",           "state": "Altar Prayers" },
+    { "slides": [37],       "description": "Lord's Prayer",                  "state": "Altar Prayers & Cong" },
+    { "slides": [38,39,40], "description": "Sermon Hymn",                    "state": "Piano Hymn" },
+    { "slides": [41],       "description": "Sermon",                         "state": "Sermon Ely" },
+    { "slides": [42,43],    "description": "Closing Prayer & Benediction",   "state": "Responsive Reading Ely" },
+    { "slides": [44],       "description": "Sharing of the Peace (ZOOM)",    "state": "Zoom" },
+    { "slides": [45,46],    "description": "Closing Hymn",                   "state": "Piano Hymn" },
+    { "slides": [47],       "description": "God bless your week (ZOOM)",     "state": "Zoom" }
+  ]
+}
