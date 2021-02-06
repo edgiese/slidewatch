@@ -1,0 +1,30 @@
+﻿Slide,Description,Scene,Cam1,Cam2,Cam3,Lectern,Vocal,Ac Guit,KeyBd,Cong,Media L,Media R,Stream L,Stream R,Pr Ely,Pr Ed
+1,Prelude,Camera 3 + Overlay,1,1,1,0,0,0,0,100,100,100,100,100,0,0
+2,Local Announcements,Standby,,,1,0,0,0,0,0,0,0,0,0,0,0
+3,Welcome,Camera 1 Only,1,,1,,,,,,,,,,100,100
+4,Opening Hymn,Camera 3 + Slide,,,1,,,,100,100,,,,,0,0
+7,Invocation & Opening Sentences,Camera 1 + Slide,1,,1,,,,,,,,,,,100
+10,Hymn,Camera 3 + Slide,,,1,,,,,,,,,,,0
+12,Confession & Absolution,Camera 1 + Slide,2,,1,,,,,,,,,,,100
+16,Hymn,Camera 3 + Slide,,,1,,,,,,,,,,,0
+17,Prayer of the Day,Camera 1 + Slide,8,,,,,,,,,,,,,100
+18,Reading,Camera 2 + Slide,,3,,100,,,,0,,,,,,0
+22,Responsory,Camera 1 + Slide,9,,,,,,,100,,,,,,
+23,Reading,Camera 2 + Slide,,3,,,,,,0,,,,,,
+27,Responsory,Camera 2 + Slide,,3,,,,,,100,,,,,,
+28,Hymn,Camera 1 + Slide,7,,,0,100,100,,,,,,,,
+30,Gospel Introduction,Camera 2 + Slide,1,1,,,0,0,,,,,,,,100
+31,Gospel Reading,Camera 1 + Slide,1,,,,,,,0,,,,,,
+34,Gospel Response,Camera 2 + Slide,,1,1,,,,,100,,,,,,
+35,Children's Message,Camera 3 Only,,,2,,,,,,,,100,100,,
+36,Apostles' Creed,Camera 1 + Slide,1,,1,,,,,,,,0,0,,
+38,Offering Announcement,Camera 1 + Slide,1,,,,,,,,,,,,,
+39,Offering Hymn,Camera 3 + Slide,,,,,,,,,,,,,,0
+41,Prayer of the Church,Camera 1 Only,8,,,,,,,0,,,,,,100
+42,Lord's Prayer,Camera 1 + Slide,8,,,,,,,100,,,,,,
+43,Sermon Hymn,Camera 3 + Slide,,,,,,,,,,,,,,0
+44,Sermon,Camera 1 Only,4,,,,,,,0,,,,,100,
+45,Benediction,Camera 2 + Slide,5,5,,,,,,100,,,,,,
+46,Sharing of the Peace,Camera 3,,,,,,,,,,,100,100,,100
+47,Hymn,Camera 3 + Slide,,,,,,,,,,,0,0,0,0
+50,Communion,Camera 1 Only,9,,1,,,,,,,,,,100,
