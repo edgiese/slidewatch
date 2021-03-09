@@ -18,7 +18,7 @@ last_preset = []
 # ws.disconnect()
 
 def my_int(str):
-    if str == '':
+    if str == '' or str is None:
         return -1
     return int(str)
 

@@ -2,7 +2,7 @@ import csv
 
 import flask
 from flask import render_template, request
-
+import openpyxl
 import state
 
 # from werkzeug import secure_filename
@@ -18,7 +18,7 @@ def home():
     return data
 
 
-@app.route('/upload')
+@app.route('/setup')
 def upload_file_form():
     return render_template('upload.html')
 
@@ -28,6 +28,32 @@ def upload_file():
     if request.method == 'POST':
         f = request.files['file']
         f.save(f.filename)
+        wb = openpyxl.load_workbook(f.filename)
+        sheet = wb['Sheet1']
+        header = [cell.value for cell in sheet[1]]
+
+        lines = []
+        skip_first = True
+        for row in sheet:
+            if skip_first:
+                skip_first = False
+                continue
+            line = {}
+            for key, cell in zip(header, row):
+                line[key] = cell.value
+            lines.append(line)
+        state.init(lines)
+
+        """    
+        header = []
+        lines = []
+        for i in range(0, sheet.ncols):
+            header[i] = sheet.cell_value(0, i)
+        for i in range(1, sheet.nrows):
+            row = {}
+            for j in range(0, len(header)):
+                row[header[j]] = sheet.cell_value(i, j)
+        """
         return 'file uploaded successfully'
 
 
@@ -39,8 +65,7 @@ def set_slide(slide_num):
 
 
 def init():
-    with open('Worship Instructions 2021-02-07.csv') as f:
-        f.read(3)
+    with open('Worship Instructions 2021-03-03.csv') as f:
         reader = csv.DictReader(f)
         lines = []
         for row in reader:
@@ -48,7 +73,7 @@ def init():
     state.init(lines)
 
 
-init()
+# init()
 app.config['UPLOAD_FOLDER'] = "C:\\worship_instructions"
 app.config['MAX_CONTENT_PATH'] = 200000
 app.run(host='0.0.0.0')
